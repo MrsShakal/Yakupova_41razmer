@@ -20,12 +20,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-
         <TextBlock Text="Логин" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center"
            VerticalAlignment="Center" FontSize="30"></TextBlock>
         <TextBlock Text="Пароль" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"
     VerticalAlignment="Center" FontSize="30"></TextBlock>
 
+        
         <TextBox Name="LoginTB" Grid.Column="1" Grid.Row="0" MaxHeight="50" MaxWidth="300" FontSize="30"></TextBox>
         <TextBox Name="PassTB" Grid.Column="1" Grid.Row="1" MaxHeight="50" MaxWidth="300" FontSize="30"></TextBox>
 
@@ -41,5 +41,7 @@
 
         <TextBox Name="CapTextBox" Grid.Row="2" Grid.Column="0" MaxHeight="50" MaxWidth="300" Visibility="Hidden" Grid.ColumnSpan="2" HorizontalAlignment="Center" 
                  Height="50" Width="300" FontSize="30"></TextBox>
+        
+        
     </Grid>
 </Page>
