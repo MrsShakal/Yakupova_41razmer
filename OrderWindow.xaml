@@ -1,0 +1,59 @@
+﻿<Window x:Class="Yakupova_41razmer.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Заказ" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="ФИО клиента: " FontWeight="Bold"/>
+            <TextBlock Name="ClientTB" Margin="0,0,20,0"/>
+            <TextBlock Text="Номер заказа: " FontWeight="Bold"/>
+            <TextBlock Name="TbOrderID"/>
+        </StackPanel>
+
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Дата формирования заказа: " FontWeight="Bold"/>
+            <TextBlock Name="OrderDP" Margin="0,0,20,0"/>
+            <TextBlock Text="Дата доставки заказа: " FontWeight="Bold"/>
+            <TextBlock Name="DeliveryDateTB"/>
+        </StackPanel>
+
+        
+        <ListView Grid.Row="2" Name="ShoeListView" Margin="0,0,0,10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Source="{Binding Product.Photo}" Width="50" Height="50" Margin="0,0,10,0"/>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Product.Name}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Product.Price, StringFormat={}{0} руб.}"/>
+                        </StackPanel>
+                        
+                        <Button Content="-" Click="BtnMinus_Click" Width="20" Margin="10,0,0,0"/>
+                        <TextBlock Text="{Binding Quantity}" Margin="5,0"/>
+                        <Button Content="+" Click="BtnPlus_Click" Width="20"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+       
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Пункт выдачи: " FontWeight="Bold" VerticalAlignment="Center"/>
+            <ComboBox Name="PickupCombo" Width="300" Margin="0,0,20,0"/>
+            <TextBlock Text="Сумма заказа: " FontWeight="Bold" VerticalAlignment="Center"/>
+            <TextBlock Name="TotalSumTB" FontWeight="Bold"/>
+        </StackPanel>
+
+        <Button Grid.Row="4" Name="SaveBtn" Content="Сохранить" Width="150" Height="30" HorizontalAlignment="Right" Click="SaveBtn_Click"/>
+    </Grid>
+</Window>
